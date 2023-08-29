@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../Interface/Book';
 
-interface Book{
-  name:string
-  author:string
-  image:string
-  amount:number
-}
+
 
 
 
@@ -32,10 +28,26 @@ export class BooksComponent  {
       author: 'Jimee',
       image:'https://m.media-amazon.com/images/I/41v96Uki0uL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
       amount:1000
-    }
+    },
+    {
+      name:'Moonshiners',
+      author:'Rajnish',
+      image:'https://m.media-amazon.com/images/I/41vt+u8zb4L._SX332_BO1,204,203,200_.jpg',
+      amount:500
+
+    },
+    {
+      name:'Moonshiners',
+      author:'Rajnish',
+      image:'https://m.media-amazon.com/images/I/41vt+u8zb4L._SX332_BO1,204,203,200_.jpg',
+      amount:500
+
+    },
   ];
   
-  
+  addtocart(event:any){
+    console.log(event);
+  }
 }
 
 
