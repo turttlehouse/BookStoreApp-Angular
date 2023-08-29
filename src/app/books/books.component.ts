@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../Interface/Book';
+import { BooksService } from './books.service';
 
 
 
@@ -14,36 +15,13 @@ export class BooksComponent  {
 
   //declaring array named Books and this array will be array of objects
 
-  books:Book[] =[
-    {
-      name:'Moonshiners',
-      author:'Rajnish',
-      image:'https://m.media-amazon.com/images/I/41vt+u8zb4L._SX332_BO1,204,203,200_.jpg',
-      amount:500
+  constructor(private bookService:BooksService){
+    this.books = this.bookService.getbooks();
+  }
 
-    },
+  books:Book[] =[];
+  
 
-    {  
-      name:'All the forgiveness',
-      author: 'Jimee',
-      image:'https://m.media-amazon.com/images/I/41v96Uki0uL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-      amount:1000
-    },
-    {
-      name:'Moonshiners',
-      author:'Rajnish',
-      image:'https://m.media-amazon.com/images/I/41vt+u8zb4L._SX332_BO1,204,203,200_.jpg',
-      amount:500
-
-    },
-    {
-      name:'Moonshiners',
-      author:'Rajnish',
-      image:'https://m.media-amazon.com/images/I/41vt+u8zb4L._SX332_BO1,204,203,200_.jpg',
-      amount:500
-
-    },
-  ];
   
   addtocart(event:any){
     console.log(event);
