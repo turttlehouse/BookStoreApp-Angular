@@ -9,8 +9,8 @@
 <img src="{{src2}}" alt="{{name}}" width="100" height="150"> -->
 
 <!-- use of $ event = tyo event ma j information tyo user lai diney -->
-<ul>
-    <ng-container  *ngFor="let singlebook of books">
+<ul class="flex flex-wrap justify-center" >
+    <ng-container   *ngFor="let singlebook of books">
        <!--  (bookemittor)="addtocart($event)"  --> <app-book  [book]="singlebook"></app-book>
     </ng-container>
    

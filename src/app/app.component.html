@@ -1,7 +1,21 @@
-<h1>Welcome to our OnlineBookStore</h1>
 <!-- <app-books></app-books>
 <app-cart></app-cart> -->
+<nav class="flex justify-between p-4 bg-purple-800 text-white">
+    <div>
+        <a routerLink="">Books</a>
+    </div>
+
+    <div>
+        <a routerLink="/cart">My Cart</a>
 
 
+    </div>
 
-<router-outlet></router-outlet>
+</nav>
+<h1>Welcome to our OnlineBookStore</h1>
+
+
+<div class="p-4">
+    <router-outlet></router-outlet>
+
+</div>

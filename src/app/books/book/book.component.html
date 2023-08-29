@@ -3,9 +3,11 @@
         
     <img [src]="book.image" [alt]="book.name" width = "100">
     {{book.name|titlecase}} by {{book.author|titlecase}}
-    <P>{{book.amount|currency:"INR"}}</P>
-    <button *ngIf="!isincart"(click)="addtocart()">Add to Cart</button>
 
-    <button *ngIf="isincart" (click)="removefromcart()">Remove from Cart</button>
+    <P class="text-lg">{{book.amount|currency:"INR"}}</P>
+
+    <button class="bg-yellow-400 rounded p-3" *ngIf="!isincart"(click)="addtocart()">Add to Cart</button>
+
+    <button class="bg-yellow-400 rounded p-3" *ngIf="isincart" (click)="removefromcart()">Remove from Cart</button>
 
 </li>
