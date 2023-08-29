@@ -4,5 +4,8 @@
     <img [src]="book.image" [alt]="book.name" width = "100">
     {{book.name|titlecase}} by {{book.author|titlecase}}
     <P>{{book.amount|currency:"INR"}}</P>
-    <button (click)="addtocart()">Add to Cart</button>
+    <button *ngIf="!isincart"(click)="addtocart()">Add to Cart</button>
+
+    <button *ngIf="isincart" (click)="removefromcart()">Remove from Cart</button>
+
 </li>

@@ -20,4 +20,8 @@ export class CartService {
   get(){
     return this.cart;
   }
+
+  remove(book:Book){
+    this.cart = this.cart.filter(b=> b!=book);   //if we use pop it will remove the last one so finding the element of cart first using filtering method
+  }
 }

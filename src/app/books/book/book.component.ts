@@ -9,7 +9,12 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class BookComponent {
   @Input() book :Book ={}as Book  //passing data from parent to child using input decorator
-  @Output() bookemittor = new EventEmitter<Book>() //passing data from child to parent   //our data type is interface which is defining the type of our book information
+  //@Output() bookemittor = new EventEmitter<Book>() //passing data from child to parent   //our data type is interface which is defining the type of our book information
+   
+  isincart: boolean= false;
+
+
+
 
   constructor(private cartservice:CartService){}
     
@@ -18,7 +23,13 @@ export class BookComponent {
     // }
 
     addtocart(){
+      this.isincart=true;
       this.cartservice.add(this.book);
+    }
+
+    removefromcart(){
+      this.isincart=false;
+      this.cartservice.remove(this.book);
     }
 
 
