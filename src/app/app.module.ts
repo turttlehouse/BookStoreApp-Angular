@@ -6,6 +6,7 @@ import { BookComponent } from './books/book/book.component';
 import { BooksModule } from "./books/books.module";
 import { CartComponent } from './cart/cart.component';
 import { ApproutingModule } from "./app-routing.module";
+import { AuthModule } from "./auth/auth.module";
 
 
 
@@ -17,7 +18,7 @@ import { ApproutingModule } from "./app-routing.module";
 //(declarations,imports,providers,Bootstrap)
 @NgModule({
     declarations: [AppComponent, CartComponent],
-    imports:[BrowserModule,BooksModule,ApproutingModule],       //After adding template in component decorator we need to import BrowserModule to have all the browser related information for the angular
+    imports:[BrowserModule,BooksModule,ApproutingModule,AuthModule],       //After adding template in component decorator we need to import BrowserModule to have all the browser related information for the angular
     bootstrap:[AppComponent]
 //Bootstrap is one of the most important thing for the root module which is the bootstrap component which is the first ever component to load 
 })
