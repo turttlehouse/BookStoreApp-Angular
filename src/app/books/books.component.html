@@ -11,7 +11,7 @@
 <!-- use of $ event = tyo event ma j information tyo user lai diney -->
 <ul>
     <ng-container  *ngFor="let singlebook of books">
-        <app-book (bookemittor)="addtocart($event)"   [book]="singlebook"></app-book>
+       <!--  (bookemittor)="addtocart($event)"  --> <app-book  [book]="singlebook"></app-book>
     </ng-container>
    
 </ul>

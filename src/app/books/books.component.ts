@@ -23,9 +23,9 @@ export class BooksComponent  {
   
 
   
-  addtocart(event:any){
-    console.log(event);
-  }
+  // addtocart(event:any){
+  //   console.log(event);
+  // }
 }
 
 
