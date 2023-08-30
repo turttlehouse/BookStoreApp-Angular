@@ -15,11 +15,16 @@ export class LoginComponent implements OnInit{
     password: '',
   };
 
+  isLoading:boolean=false;
+
+
   constructor(){}
 
   ngOnInit(): void {}
 
   submit() {
+      if (this.isLoading) return;
+      this.isLoading = true;
 
       const auth = getAuth();
       signInWithEmailAndPassword(auth, this.form.email, this.form.password)
@@ -32,7 +37,8 @@ export class LoginComponent implements OnInit{
           const errorCode = error.code;
           const errorMessage = error.message;
           alert("credentials doesnot match");
-        });
+        })
+        .finally(()=>(this.isLoading=false));
         console.log(this.form);
   }
 }
