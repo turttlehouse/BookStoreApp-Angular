@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { firebaseConfig } from "./firebase.config";
+import { initializeApp } from "firebase/app";
 
 // import { initializeApp } from 'firebase/app';
 // import { firebaseConfig } from './firebase.config';
@@ -13,10 +15,10 @@ import { Component } from "@angular/core";
     styleUrls : ['app.component.css'],           
 })
 
-export class AppComponent{}
-// export class AppComponent implements OnInit {
-//     constructor(private authService: AuthService) {}
+
+export class AppComponent implements OnInit{
   
-    // ngOnInit(): void {
-    //   initializeApp(firebaseConfig);
-    // }
+    ngOnInit(): void {
+      initializeApp(firebaseConfig);
+    }
+}  
