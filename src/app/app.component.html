@@ -15,7 +15,7 @@
         
         <ng-container *ngIf="isAuthenticated()">
 
-            <button class="mx-4" routerLink="/login">Log Out</button>
+            <button class="mx-4" (click)="logout()">Log Out</button>
 
         </ng-container>
        
