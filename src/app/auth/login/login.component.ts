@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { loginform } from 'src/app/Interface/Auth';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 
 
 @Component({
@@ -18,6 +20,19 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {}
 
   submit() {
-    console.log(this.form);
+
+      const auth = getAuth();
+      signInWithEmailAndPassword(auth, this.form.email, this.form.password)
+        .then((userCredential) => {
+          // Signed in 
+          alert("login successfully");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert("credentials doesnot match");
+        });
+        console.log(this.form);
   }
 }
